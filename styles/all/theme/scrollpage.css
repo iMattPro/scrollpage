@@ -1,0 +1,36 @@
+.scroll-page {
+	width: 40px;
+	border-radius: 3px;
+	background-color: #000; /* Scroll bg color */
+	position: fixed;
+	bottom: 25px;
+	right: 25px;
+	opacity: 0.5;
+	z-index: 9999;
+	cursor: pointer;
+	display: none;
+	font-size: 20px;
+	color: #fff;
+}
+
+.scroll-page i {
+	color: inherit;
+	display: block;
+	padding: 10px;
+}
+
+.scroll-page i:first-child { padding-bottom: 5px; }
+.scroll-page i:last-child { padding-top: 5px; }
+
+.notouch .scroll-page:hover { opacity: 0.8 }
+
+@media only screen and (max-width: 800px), only screen and (max-device-width: 800px) {
+	.scroll-page {
+		display: none !important;
+	}
+}
+
+.rtl .scroll-page {
+	right: 0;
+	left: 25px;
+}

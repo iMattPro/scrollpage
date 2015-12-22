@@ -1,0 +1,26 @@
+{
+	"name": "vse/scrollpage",
+	"type": "phpbb-extension",
+	"description": "A phpBB 3.2 extension that adds a scroll to top & bottom button making it easier to navigate long pages.",
+	"homepage": "",
+	"version": "1.0.0-dev",
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "Matt Friedman (VSE)",
+			"homepage": "http://mattfriedman.me",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.4",
+		"phpbb/phpbb": ">=3.2.0@dev",
+		"composer/installers": "~1.0"
+	},
+	"extra": {
+		"display-name": "Scroll Page",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.2.0@dev"
+		}
+	}
+}
