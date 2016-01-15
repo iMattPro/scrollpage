@@ -15,8 +15,8 @@ namespace vse\scrollpage;
 */
 class ext extends \phpbb\extension\base
 {
-	/** @var string Require 3.2.0-a1 due to use of font icons */
-	const PHPBB_VERSION = '3.2.0-a1';
+	/** @var string Require 3.1.2 due to updated INCLUDECSS syntax */
+	const PHPBB_VERSION = '3.1.2';
 
 	/**
 	 * Enable extension if phpBB minimum version requirement is met
