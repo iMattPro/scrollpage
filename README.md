@@ -1,13 +1,13 @@
 # Scroll Page extension for phpBB
 
-This phpBB extension adds a scroll to top & bottom button making it easier to navigate long pages.
+This phpBB extension adds a scroll to top &amp; bottom button making it easier to navigate long pages.
 
 ## Requirements
 * phpBB 3.1.2 or higher
 * PHP 5.3.3 or higher
 
 ## Installation
-1. Download and unzip the [latest release](https://github.com/VSEphpbb/scrollpage/releases) and copy it to the `ext` directory of your phpBB board.
+1. [Download the latest validated release](https://www.phpbb.com/customise/db/extension/scroll-page/).
 2. Unzip the downloaded release and copy it to the `ext` directory of your phpBB board.
 3. Navigate in the ACP to `Customise -> Manage extensions`.
 4. Look for `Scroll Page` under the Disabled Extensions list, and click its `Enable` link.
@@ -18,6 +18,6 @@ This phpBB extension adds a scroll to top & bottom button making it easier to na
 3. To permanently uninstall, click `Delete Data`, then delete the `scrollpage` folder from `phpBB/ext/vse/`.
 
 ## License
-[GNU General Public License v2](http://opensource.org/licenses/GPL-2.0)
+[GNU General Public License v2](license.txt)
 
 © 2015 - Matt Friedman (VSE)
