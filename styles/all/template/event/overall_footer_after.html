@@ -17,7 +17,7 @@ $(function() {
 		button = $('.scroll-page'),
 		buttonHidden = true;
 
-	$(window).scroll(function() {
+	$(window).bind('scroll load', function() {
 		var pos = $(this).scrollTop();
 		if (pos > settings.min && buttonHidden) {
 			button.stop(true, true).fadeIn();
