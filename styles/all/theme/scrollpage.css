@@ -1,39 +1,41 @@
 .scroll-page {
-	border-radius: 3px;
-	background-color: #000; /* Scroll bg color */
-	position: fixed;
-	bottom: 25px;
-	right: 25px;
-	opacity: 0.5;
-	z-index: 9999;
-	cursor: pointer;
-	display: none;
 	font-size: 20px;
-	color: #fff;
+	background-color: #000000; /* Scroll bg color */
+	border-radius: 3px;
+	color: #ffffff;
+	opacity: 0.5;
+	position: fixed;
+	z-index: 9999;
+	right: 25px;
+	bottom: 25px;
+	display: none;
+	cursor: pointer;
 }
 
 .scroll-page i {
+	background: url("./images/sprite.png"); /* PNG fallback */
+	background-image: url("./images/sprite.svg"); /* SVG image */
+	background-repeat: no-repeat;
 	color: inherit;
 	display: block;
-	padding: 10px;
 	width: 20px;
 	height: 20px;
-	background: url('./images/sprite.png'); /* PNG fallback */
-	background-image: url('./images/sprite.svg'); /* SVG image */
-	background-repeat: no-repeat;
+	padding: 10px;
 }
 
 .scroll-page .scroll-up {
-	padding-bottom: 5px;
 	background-position: -26px 10px;
+	padding-bottom: 5px;
 }
 
 .scroll-page .scroll-down {
-	padding-top: 5px;
 	background-position: 10px 5px;
+	padding-top: 5px;
 }
 
-.notouch .scroll-page:hover { opacity: 0.8 }
+.notouch .scroll-page:hover {
+	opacity: 0.8;
+}
 
 .rtl .scroll-page {
 	right: auto;
@@ -41,5 +43,7 @@
 }
 
 @media only screen and (max-width: 800px), only screen and (max-device-width: 800px) {
-	.scroll-page { display: none !important }
+	.scroll-page {
+		display: none !important;
+	}
 }
