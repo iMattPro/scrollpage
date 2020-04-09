@@ -18,6 +18,16 @@ This phpBB extension adds a scroll to top and bottom button making it easier to 
 2. Click the `Disable` link for Scroll Page.
 3. To permanently uninstall, click `Delete Data`, then delete the `scrollpage` folder from `phpBB/ext/vse/`.
 
+## Customizing
+Style authors can update the look of the scroll page buttons via the `scroll-page` class. 
+```css
+.scroll-page {
+    background-color: #000000; /* Scroll button color */
+    border-radius: 3px; /* Rounded corners, set to 0 for none */
+    color: #ffffff; /* Arrow color */
+}
+```
+
 ## License
 [GNU General Public License v2](license.txt)
 
