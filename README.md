@@ -1,6 +1,6 @@
 # Scroll Page extension for phpBB
 
-This phpBB extension adds a scroll to top &amp; bottom button making it easier to navigate long pages.
+This phpBB extension adds a scroll to top and bottom button making it easier to navigate long pages.
 
 ## Minimum Requirements
 * phpBB 3.2.0
