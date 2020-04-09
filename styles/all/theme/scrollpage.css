@@ -2,7 +2,7 @@
 	font-size: 20px;
 	background-color: #000000; /* Scroll bg color */
 	border-radius: 3px;
-	color: #ffffff;
+	color: #ffffff; /* Arrow color */
 	opacity: 0.5;
 	position: fixed;
 	z-index: 9999;
@@ -13,9 +13,7 @@
 }
 
 .scroll-page i {
-	background: url("./images/sprite.png"); /* PNG fallback */
-	background-image: url("./images/sprite.svg"); /* SVG image */
-	background-repeat: no-repeat;
+	font-size: inherit;
 	color: inherit;
 	display: block;
 	width: 20px;
@@ -24,12 +22,10 @@
 }
 
 .scroll-page .scroll-up {
-	background-position: -26px 10px;
 	padding-bottom: 5px;
 }
 
 .scroll-page .scroll-down {
-	background-position: 10px 5px;
 	padding-top: 5px;
 }
 
