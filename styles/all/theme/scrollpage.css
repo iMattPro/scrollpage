@@ -13,20 +13,17 @@
 }
 
 .scroll-page i {
-	font-family: FontAwesome;
 	font-size: inherit;
-	font-weight: normal;
-	font-style: normal;
-	font-variant: normal;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	line-height: 1;
 	color: inherit;
 	opacity: 0.9;
 	display: block;
 	width: 20px;
 	height: 20px;
 	padding: 10px;
+}
+
+.scroll-page i:before {
+	padding: 0 !important; /* override style icon padding */
 }
 
 .scroll-page .scroll-up {
@@ -46,8 +43,13 @@
 	left: 25px;
 }
 
+.rtl .scroll-page i {
+	padding-right: 10px !important; /* override rtl icon padding */
+	padding-left: 10px !important; /* override rtl icon padding */
+}
+
 @media only screen and (max-width: 800px), only screen and (max-device-width: 800px) {
 	.scroll-page {
-		display: none !important;
+		display: none !important; /* force to not display on small/mobile */
 	}
 }
