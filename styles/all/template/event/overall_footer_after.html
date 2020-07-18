@@ -1,42 +1,6 @@
+{% INCLUDEJS '@vse_scrollpage/scrollpage.min.js' %}
+{% INCLUDECSS '@vse_scrollpage/scrollpage.min.css' %}
 <div class="scroll-page">
-	<i class="scroll-up"></i>
-	<i class="scroll-down"></i>
+	<i class="scroll-up fa-fw fa-arrow-up icon"></i>
+	<i class="scroll-down fa-fw fa-arrow-down icon"></i>
 </div>
-
-<script>
-
-(function($) { // Avoid conflicts with other libraries
-
-'use strict';
-
-$(function() {
-	var settings = {
-			min: 150,
-			scrollSpeed: 400
-		},
-		button = $('.scroll-page'),
-		buttonHidden = true;
-
-	$(window).scroll(function() {
-		var pos = $(this).scrollTop();
-		if (pos > settings.min && buttonHidden) {
-			button.stop(true, true).fadeIn();
-			buttonHidden = false;
-		} else if(pos <= settings.min && !buttonHidden) {
-			button.stop(true, true).fadeOut();
-			buttonHidden = true;
-		}
-	});
-
-	var scrollPage = function() {
-		$('html, body').animate({
-			scrollTop: ($(this).hasClass('scroll-up')) ? 0 : $(document).height()
-		}, settings.scrollSpeed);
-	};
-
-	$('.scroll-page > i').on('click touchstart', scrollPage);
-});
-
-})(jQuery);
-
-</script>

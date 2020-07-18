@@ -1,8 +1,8 @@
 .scroll-page {
 	font-size: 20px;
-	background-color: #000000; /* Scroll bg color */
-	border-radius: 3px;
-	color: #ffffff;
+	background-color: #000000; /* Scroll button color */
+	border-radius: 3px; /* Rounded corners, set to 0 for none */
+	color: #ffffff; /* Arrow color */
 	opacity: 0.5;
 	position: fixed;
 	z-index: 9999;
@@ -13,28 +13,29 @@
 }
 
 .scroll-page i {
-	background: url("./images/sprite.png"); /* PNG fallback */
-	background-image: url("./images/sprite.svg"); /* SVG image */
-	background-repeat: no-repeat;
+	font-size: inherit;
 	color: inherit;
+	opacity: 0.9;
 	display: block;
 	width: 20px;
 	height: 20px;
 	padding: 10px;
 }
 
+.scroll-page i:before {
+	padding: 0 !important; /* override style icon padding */
+}
+
 .scroll-page .scroll-up {
-	background-position: -26px 10px;
 	padding-bottom: 5px;
 }
 
 .scroll-page .scroll-down {
-	background-position: 10px 5px;
 	padding-top: 5px;
 }
 
-.notouch .scroll-page:hover {
-	opacity: 0.8;
+.notouch .scroll-page i:hover {
+	opacity: 1;
 }
 
 .rtl .scroll-page {
@@ -42,8 +43,13 @@
 	left: 25px;
 }
 
+.rtl .scroll-page i {
+	padding-right: 10px !important; /* override rtl icon padding */
+	padding-left: 10px !important; /* override rtl icon padding */
+}
+
 @media only screen and (max-width: 800px), only screen and (max-device-width: 800px) {
 	.scroll-page {
-		display: none !important;
+		display: none !important; /* force to not display on small/mobile */
 	}
 }
