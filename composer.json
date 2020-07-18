@@ -2,13 +2,13 @@
 	"name": "vse/scrollpage",
 	"type": "phpbb-extension",
 	"description": "A phpBB extension that adds a scroll to top and bottom button making it easier to navigate long pages.",
-	"homepage": "https://github.com/VSEphpbb/scrollpage",
-	"version": "1.1.0-dev",
+	"homepage": "https://github.com/iMattPro/scrollpage",
+	"version": "1.1.0",
 	"license": "GPL-2.0-only",
 	"authors": [
 		{
 			"name": "Matt Friedman",
-			"homepage": "http://vsephpbb.github.io",
+			"homepage": "https://imattpro.github.io",
 			"role": "Developer"
 		}
 	],
