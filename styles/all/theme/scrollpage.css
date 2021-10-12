@@ -12,18 +12,22 @@
 	cursor: pointer;
 }
 
-.scroll-page i {
+.scroll-page div {
 	font-size: inherit;
 	color: inherit;
 	opacity: 0.9;
-	display: block;
+	display: flex;
 	width: 20px;
 	height: 20px;
 	padding: 10px;
+	justify-content: center;
+	align-items: center;
 }
 
-.scroll-page i:before {
-	padding: 0 !important; /* override style icon padding */
+.scroll-page div .o-icon {
+	width: 20px;
+	height: 20px;
+	margin: 0;
 }
 
 .scroll-page .scroll-up {
@@ -34,7 +38,7 @@
 	padding-top: 5px;
 }
 
-.notouch .scroll-page i:hover {
+.notouch .scroll-page div:hover {
 	opacity: 1;
 }
 
@@ -43,7 +47,7 @@
 	left: 25px;
 }
 
-.rtl .scroll-page i {
+.rtl .scroll-page div {
 	padding-right: 10px !important; /* override rtl icon padding */
 	padding-left: 10px !important; /* override rtl icon padding */
 }

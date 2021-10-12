@@ -27,7 +27,7 @@
 			}, settings.scrollSpeed);
 		};
 
-		$('.scroll-page > i').on('click touchstart', scrollPage);
+		$('.scroll-page > div').on('click touchstart', scrollPage);
 	});
 
 })(jQuery);
