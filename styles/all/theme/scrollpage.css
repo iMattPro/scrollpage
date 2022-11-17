@@ -1,7 +1,7 @@
 .scroll-page {
 	font-size: 20px;
 	background-color: #000000; /* Scroll button color */
-	border-radius: 3px; /* Rounded corners, set to 0 for none */
+	border-radius: 50px; /* Rounded corners, set to 0 for none */
 	color: #ffffff; /* Arrow color */
 	opacity: 0.5;
 	position: fixed;
