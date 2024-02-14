@@ -3,7 +3,7 @@
 <div class="scroll-page">
 	{% for direction in ['up', 'down'] %}
 		<div class="scroll-{{ direction }}">
-			{{ Icon('iconify', 'fa-solid:arrow-' ~ direction, '', true) }}
+			{{ Icon('font', 'arrow-' ~ direction, '', true, 'fas') }}
 		</div>
 	{% endfor %}
 </div>

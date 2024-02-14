@@ -17,16 +17,16 @@
 	color: inherit;
 	opacity: 0.9;
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 20px;
 	height: 20px;
 	padding: 10px;
-	justify-content: center;
-	align-items: center;
 }
 
 .scroll-page div .o-icon {
 	width: 20px;
-	height: 20px;
+	height: auto;
 	margin: 0;
 }
 
