@@ -19,12 +19,13 @@
 	"extra": {
 		"display-name": "Scroll Page",
 		"soft-require": {
-			"phpbb/phpbb": ">=3.2.0"
+			"phpbb/phpbb": ">=3.2.0,<4.0.0@dev"
 		},
 		"version-check": {
 			"host": "www.phpbb.com",
 			"directory": "/customise/db/extension/scroll_page",
-			"filename": "version_check"
+			"filename": "version_check",
+			"ssl": true
 		}
 	}
 }
