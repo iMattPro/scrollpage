@@ -1,9 +1,6 @@
 {% INCLUDEJS '@vse_scrollpage/scrollpage.js' %}
 {% INCLUDECSS '@vse_scrollpage/scrollpage.css' %}
 <div class="scroll-page">
-	{% for direction in ['up', 'down'] %}
-		<div class="scroll-{{ direction }}">
-			{{ Icon('font', 'arrow-' ~ direction, '', true, 'fas') }}
-		</div>
-	{% endfor %}
+	{{ Icon('font', 'arrow-up', '', true, 'fas scroll-up') }}
+	{{ Icon('font', 'arrow-down', '', true, 'fas scroll-down') }}
 </div>
