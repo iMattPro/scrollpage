@@ -3,13 +3,14 @@
 	background-color: #000000; /* Scroll button color */
 	border-radius: 50px; /* Rounded corners, set to 0 for none */
 	color: #ffffff; /* Arrow color */
-	opacity: 0.5;
+	opacity: 0;
 	position: fixed;
 	z-index: 9999;
 	right: 25px;
 	bottom: 25px;
 	display: none;
 	cursor: pointer;
+	transition: opacity 300ms ease-in-out;
 }
 
 .scroll-page i {

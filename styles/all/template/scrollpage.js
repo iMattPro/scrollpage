@@ -1,33 +1,42 @@
-(function($) { // Avoid conflicts with other libraries
+'use strict';
 
-	'use strict';
+const settings = {
+	min: 25,
+	scrollSpeed: 400,
+	fadeSpeed: 300
+};
 
-	$(function() {
-		var settings = {
-				min: 25,
-				scrollSpeed: 400
-			},
-			button = $('.scroll-page'),
-			buttonHidden = true;
+let buttonHidden = true;
+const button = document.querySelector('.scroll-page');
 
-		$(window).on('scroll', function() {
-			var pos = $(this).scrollTop();
-			if (pos > settings.min && buttonHidden) {
-				button.stop(true, true).fadeIn();
-				buttonHidden = false;
-			} else if (pos <= settings.min && !buttonHidden) {
-				button.stop(true, true).fadeOut();
-				buttonHidden = true;
-			}
-		});
+window.addEventListener('scroll', () => {
+	const pos = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+	if (pos > settings.min && buttonHidden) {
+		button.style.display = 'block'; // Show the button as a block element
+		setTimeout(() => {
+			button.style.opacity = '0.5'; // Fade in the button after it's visible
+		}, 0);
+		buttonHidden = false;
+	} else if (pos <= settings.min && !buttonHidden) {
+		button.style.opacity = '0'; // Fade out the button
+		setTimeout(() => {
+			button.style.display = 'none'; // Hide the button after it's fully transparent
+		}, settings.fadeSpeed);
+		buttonHidden = true;
+	}
+});
 
-		var scrollPage = function() {
-			$('html, body').animate({
-				scrollTop: ($(this).hasClass('scroll-up')) ? 0 : $(document).height()
-			}, settings.scrollSpeed);
-		};
-
-		$('.scroll-page > i').on('click touchstart', scrollPage);
+const scrollPage = (event) => {
+	const isScrollUp = event.currentTarget.classList.contains('scroll-up');
+	const scrollTop = isScrollUp ? 0 : document.documentElement.scrollHeight;
+	window.scrollTo({
+		top: scrollTop,
+		behavior: 'smooth'
 	});
+};
 
-})(jQuery);
+const scrollPageIcons = document.querySelectorAll('.scroll-page > i');
+scrollPageIcons.forEach(icon => {
+	icon.addEventListener('click', scrollPage);
+	icon.addEventListener('touchstart', scrollPage);
+});
