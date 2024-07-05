@@ -53,6 +53,24 @@
 
 @media only screen and (max-width: 500px), only screen and (max-device-width: 500px) {
 	.scroll-page {
-		display: none !important;
+		font-size: 16px;
+		right: 15px;
+		bottom: 15px;
+	}
+
+	.scroll-page i {
+		width: 14px;
+		height: 14px;
+		padding: 6px;
+	}
+
+	.rtl .scroll-page {
+		right: auto;
+		left: 15px;
+	}
+
+	.rtl .scroll-page i {
+		padding-right: 6px !important;
+		padding-left: 6px !important;
 	}
 }
