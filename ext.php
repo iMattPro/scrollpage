@@ -17,12 +17,12 @@ class ext extends \phpbb\extension\base
 {
 	/**
 	 * Enable extension if phpBB minimum version requirement is met
-	 * Require 3.2.0 due to relocated INCLUDECSS and FONTAWESOME
+	 * Require 4.0.0 due to new icons in 4.0.0
 	 *
 	 * @return bool
 	 */
 	public function is_enableable()
 	{
-		return phpbb_version_compare(PHPBB_VERSION, '3.2.0', '>=');
+		return phpbb_version_compare(PHPBB_VERSION, '4.0.0-a1', '>=');
 	}
 }
