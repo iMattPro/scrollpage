@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
   call-tests:
     name: Extension tests
-    uses: phpbb-extensions/test-framework/.github/workflows/tests.yml@3.3.x
+    uses: phpbb-extensions/test-framework/.github/workflows/tests.yml@master
     with:
       EXTNAME: vse/scrollpage   # Your extension vendor/package name (required)
       RUN_MYSQL_JOBS: 0
