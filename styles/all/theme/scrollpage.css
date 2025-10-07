@@ -7,18 +7,22 @@
 	/* Scroll button appearance */
 	--scroll-page-bg-color: #000000;
 	--scroll-page-arrow-color: #ffffff;
-	--scroll-page-border-radius: 50px;
+	--scroll-page-border-radius: 3px;
 	--scroll-page-z-index: 9999;
+
+	/* Scroll button arrow icons */
+	--scroll-page-arrow-up: "\f062";
+	--scroll-page-arrow-down: "\f063";
 
 	/* Positioning (desktop) */
 	--scroll-page-position-x: 25px;
 	--scroll-page-position-y: 25px;
 
 	/* Size and spacing (desktop) */
-	--scroll-page-font-size: 20px;
+	--scroll-page-font-size: 18px;
 	--scroll-page-icon-width: 20px;
 	--scroll-page-icon-height: 20px;
-	--scroll-page-icon-padding: 10px;
+	--scroll-page-icon-padding: 6px;
 
 	/* Opacity values */
 	--scroll-page-icon-opacity: 0.9;
@@ -28,7 +32,7 @@
 	--scroll-page-transition: opacity 0.3s ease-in-out;
 
 	/* Mobile breakpoint values */
-	--scroll-page-mobile-font-size: 16px;
+	--scroll-page-mobile-font-size: 14px;
 	--scroll-page-mobile-position-x: 15px;
 	--scroll-page-mobile-position-y: 15px;
 	--scroll-page-mobile-icon-width: 14px;
@@ -38,8 +42,6 @@
 
 .scroll-page {
 	font-size: var(--scroll-page-font-size);
-	background-color: var(--scroll-page-bg-color);
-	border-radius: var(--scroll-page-border-radius);
 	color: var(--scroll-page-arrow-color);
 	opacity: 0;
 	position: fixed;
@@ -57,14 +59,20 @@
 }
 
 .scroll-page i {
+	font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", FontAwesome, system-ui, sans-serif;
 	font-size: inherit;
-	color: inherit;
+	font-weight: 900;
+	font-style: normal;
+	background-color: var(--scroll-page-bg-color);
+	border-radius: var(--scroll-page-border-radius);
+	color: var(--scroll-page-arrow-color);
 	opacity: var(--scroll-page-icon-opacity);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: var(--scroll-page-icon-width);
 	height: var(--scroll-page-icon-height);
+	margin: 0;
 	padding: var(--scroll-page-icon-padding);
 }
 
@@ -73,11 +81,15 @@
 }
 
 .scroll-page .scroll-up {
-	padding-bottom: 5px;
+	margin-bottom: 3px;
 }
 
-.scroll-page .scroll-down {
-	padding-top: 5px;
+.scroll-page .scroll-up:before {
+	content: var(--scroll-page-arrow-up);
+}
+
+.scroll-page .scroll-down:before {
+	content: var(--scroll-page-arrow-down);
 }
 
 .notouch .scroll-page i:hover {
