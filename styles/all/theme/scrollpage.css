@@ -28,9 +28,6 @@
 	--scroll-page-icon-opacity: 0.9;
 	--scroll-page-icon-hover-opacity: 1;
 
-	/* Animation */
-	--scroll-page-transition: opacity 0.3s ease-in-out;
-
 	/* Mobile breakpoint values */
 	--scroll-page-mobile-font-size: 14px;
 	--scroll-page-mobile-position-x: 15px;
@@ -50,12 +47,14 @@
 	bottom: var(--scroll-page-position-y);
 	visibility: hidden;
 	cursor: pointer;
-	transition: var(--scroll-page-transition);
+	transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+	transition-delay: 0s, 0.3s;
 }
 
 .scroll-page.visible {
 	opacity: 0.5;
 	visibility: visible;
+	transition-delay: 0s;
 }
 
 .scroll-page i {
