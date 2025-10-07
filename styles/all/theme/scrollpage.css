@@ -1,28 +1,61 @@
+:root {
+	/* Scroll button appearance */
+	--scroll-page-bg-color: #000000;
+	--scroll-page-arrow-color: #ffffff;
+	--scroll-page-border-radius: 50px;
+	--scroll-page-z-index: 9999;
+
+	/* Positioning (desktop) */
+	--scroll-page-position-x: 25px;
+	--scroll-page-position-y: 25px;
+
+	/* Size and spacing (desktop) */
+	--scroll-page-font-size: 20px;
+	--scroll-page-icon-width: 20px;
+	--scroll-page-icon-height: 20px;
+	--scroll-page-icon-padding: 10px;
+
+	/* Opacity values */
+	--scroll-page-icon-opacity: 0.9;
+	--scroll-page-icon-hover-opacity: 1;
+
+	/* Animation */
+	--scroll-page-transition: opacity 0.3s ease-in-out;
+
+	/* Mobile breakpoint values */
+	--scroll-page-mobile-font-size: 16px;
+	--scroll-page-mobile-position-x: 15px;
+	--scroll-page-mobile-position-y: 15px;
+	--scroll-page-mobile-icon-width: 14px;
+	--scroll-page-mobile-icon-height: 14px;
+	--scroll-page-mobile-icon-padding: 6px;
+}
+
 .scroll-page {
-	font-size: 20px;
-	background-color: #000000; /* Scroll button color */
-	border-radius: 50px; /* Rounded corners, set to 0 for none */
-	color: #ffffff; /* Arrow color */
+	font-size: var(--scroll-page-font-size);
+	background-color: var(--scroll-page-bg-color);
+	border-radius: var(--scroll-page-border-radius);
+	color: var(--scroll-page-arrow-color);
 	opacity: 0;
 	position: fixed;
-	z-index: 9999;
-	right: 25px;
-	bottom: 25px;
+	z-index: var(--scroll-page-z-index);
+	right: var(--scroll-page-position-x);
+	bottom: var(--scroll-page-position-y);
 	display: none;
 	cursor: pointer;
-	transition: opacity 0.3s ease-in-out;
+	transition: var(--scroll-page-transition);
 }
 
 .scroll-page i {
 	font-size: inherit;
 	color: inherit;
-	opacity: 0.9;
+	opacity: var(--scroll-page-icon-opacity);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 20px;
-	height: 20px;
-	padding: 10px;
+	width: var(--scroll-page-icon-width);
+	height: var(--scroll-page-icon-height);
+	padding: var(--scroll-page-icon-padding);
 }
 
 .scroll-page i:before {
@@ -38,39 +71,37 @@
 }
 
 .notouch .scroll-page i:hover {
-	opacity: 1;
+	opacity: var(--scroll-page-icon-hover-opacity);
 }
 
 .rtl .scroll-page {
 	right: auto;
-	left: 25px;
+	left: var(--scroll-page-position-x);
 }
 
 .rtl .scroll-page i {
-	padding-right: 10px !important;
-	padding-left: 10px !important;
+	padding-inline: var(--scroll-page-icon-padding) !important;
 }
 
 @media only screen and (max-width: 500px), only screen and (max-device-width: 500px) {
 	.scroll-page {
-		font-size: 16px;
-		right: 15px;
-		bottom: 15px;
+		font-size: var(--scroll-page-mobile-font-size);
+		right: var(--scroll-page-mobile-position-x);
+		bottom: var(--scroll-page-mobile-position-y);
 	}
 
 	.scroll-page i {
-		width: 14px;
-		height: 14px;
-		padding: 6px;
+		width: var(--scroll-page-mobile-icon-width);
+		height: var(--scroll-page-mobile-icon-height);
+		padding: var(--scroll-page-mobile-icon-padding);
 	}
 
 	.rtl .scroll-page {
 		right: auto;
-		left: 15px;
+		left: var(--scroll-page-mobile-position-x);
 	}
 
 	.rtl .scroll-page i {
-		padding-right: 6px !important;
-		padding-left: 6px !important;
+		padding-inline: var(--scroll-page-mobile-icon-padding) !important;
 	}
 }
