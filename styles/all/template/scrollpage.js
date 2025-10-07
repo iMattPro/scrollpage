@@ -1,23 +1,32 @@
-(function() {
+(() => {
 	'use strict';
 
-	const settings = {
-		min: 25
-	};
-
-	let buttonHidden = true;
+	const SCROLL_THRESHOLD = 25;
 	const button = document.querySelector('.scroll-page');
 
-	window.addEventListener('scroll', () => {
-		const pos = window.scrollY || document.documentElement.scrollTop;
-		if (pos > settings.min && buttonHidden) {
-			button.classList.add('visible');
-			buttonHidden = false;
-		} else if (pos <= settings.min && !buttonHidden) {
-			button.classList.remove('visible');
-			buttonHidden = true;
+	if (!button) {
+		return;
+	}
+
+	let isVisible = false;
+
+	// Throttle scroll events for better performance
+	let scrollTimeout;
+	const handleScroll = () => {
+		if (scrollTimeout) {
+			return;
 		}
-	});
+
+		scrollTimeout = setTimeout(() => {
+			scrollTimeout = null;
+			const shouldShow = window.scrollY > SCROLL_THRESHOLD;
+
+			if (shouldShow !== isVisible) {
+				button.classList.toggle('visible', shouldShow);
+				isVisible = shouldShow;
+			}
+		}, 100);
+	};
 
 	const scrollPage = (event) => {
 		window.scrollTo({
@@ -26,8 +35,9 @@
 		});
 	};
 
-	const scrollPageIcons = document.querySelectorAll('.scroll-page > i');
-	scrollPageIcons.forEach(icon => {
+	window.addEventListener('scroll', handleScroll, { passive: true });
+
+	document.querySelectorAll('.scroll-page > i').forEach(icon => {
 		icon.addEventListener('click', scrollPage);
 	});
 })();
