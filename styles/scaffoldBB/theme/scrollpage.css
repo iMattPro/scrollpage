@@ -1,0 +1,13 @@
+@import url("../../all/theme/scrollpage.css");
+
+:root {
+	--scroll-page-bg-color: rgb(13 110 253);
+	--scroll-page-arrow-color: #ffffff;
+	--scroll-page-border-radius: 50%;
+
+	--scroll-page-icon-width: 40px;
+	--scroll-page-icon-height: 40px;
+
+	--scroll-page-mobile-icon-width: 28px;
+	--scroll-page-mobile-icon-height: 28px;
+}
