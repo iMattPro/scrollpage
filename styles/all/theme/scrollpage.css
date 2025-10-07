@@ -41,9 +41,14 @@
 	z-index: var(--scroll-page-z-index);
 	right: var(--scroll-page-position-x);
 	bottom: var(--scroll-page-position-y);
-	display: none;
+	visibility: hidden;
 	cursor: pointer;
 	transition: var(--scroll-page-transition);
+}
+
+.scroll-page.visible {
+	opacity: 0.5;
+	visibility: visible;
 }
 
 .scroll-page i {
