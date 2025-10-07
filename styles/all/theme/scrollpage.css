@@ -1,3 +1,8 @@
+/* Hide phpBB's built-in scroll to top button */
+.to-top-button {
+	display: none !important;
+}
+
 :root {
 	/* Scroll button appearance */
 	--scroll-page-bg-color: #000000;

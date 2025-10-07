@@ -8,6 +8,12 @@
 		return;
 	}
 
+	// Hide phpBB's built-in scroll to top button if it exists
+	const phpbbButton = document.querySelector('.to-top-button');
+	if (phpbbButton) {
+		phpbbButton.style.display = 'none';
+	}
+
 	let isVisible = false;
 
 	// Throttle scroll events for better performance
