@@ -11,8 +11,8 @@
 	--scroll-page-z-index: 9999;
 
 	/* Scroll button arrow icons */
-	--scroll-page-arrow-up: "\f062";
-	--scroll-page-arrow-down: "\f063";
+	--scroll-page-arrow-up: "\f106";
+	--scroll-page-arrow-down: "\f107";
 
 	/* Positioning (desktop) */
 	--scroll-page-position-x: 25px;
@@ -89,7 +89,6 @@
 
 .scroll-page .scroll-down:before {
 	content: var(--scroll-page-arrow-down);
-	transform: translateY(1px);
 }
 
 .notouch .scroll-page i:hover {
