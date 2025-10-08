@@ -15,26 +15,26 @@
 	--scroll-page-arrow-down: "\f107";
 
 	/* Positioning (desktop) */
-	--scroll-page-position-x: 25px;
-	--scroll-page-position-y: 25px;
+	--scroll-page-position-x: 1.5625rem;
+	--scroll-page-position-y: 1.5625rem;
 
 	/* Size and spacing (desktop) */
-	--scroll-page-font-size: 18px;
-	--scroll-page-icon-width: 20px;
-	--scroll-page-icon-height: 20px;
-	--scroll-page-icon-padding: 6px;
+	--scroll-page-font-size: 1.125rem;
+	--scroll-page-icon-width: 1.25rem;
+	--scroll-page-icon-height: 1.25rem;
+	--scroll-page-icon-padding: 0.375rem;
 
 	/* Opacity values */
 	--scroll-page-icon-opacity: 0.9;
 	--scroll-page-icon-hover-opacity: 1;
 
 	/* Mobile breakpoint values */
-	--scroll-page-mobile-font-size: 14px;
-	--scroll-page-mobile-position-x: 15px;
-	--scroll-page-mobile-position-y: 15px;
-	--scroll-page-mobile-icon-width: 14px;
-	--scroll-page-mobile-icon-height: 14px;
-	--scroll-page-mobile-icon-padding: 6px;
+	--scroll-page-mobile-font-size: 0.875rem;
+	--scroll-page-mobile-position-x: 0.9375rem;
+	--scroll-page-mobile-position-y: 0.9375rem;
+	--scroll-page-mobile-icon-width: 0.875rem;
+	--scroll-page-mobile-icon-height: 0.875rem;
+	--scroll-page-mobile-icon-padding: 0.375rem;
 }
 
 .scroll-page {
