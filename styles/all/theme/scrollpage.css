@@ -89,6 +89,7 @@
 
 .scroll-page .scroll-down:before {
 	content: var(--scroll-page-arrow-down);
+	transform: translateY(1px);
 }
 
 .notouch .scroll-page i:hover {
