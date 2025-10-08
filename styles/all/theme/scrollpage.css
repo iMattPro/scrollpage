@@ -68,7 +68,7 @@
 	opacity: var(--scroll-page-icon-opacity);
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-end;
 	width: var(--scroll-page-icon-width);
 	height: var(--scroll-page-icon-height);
 	margin: 0;
