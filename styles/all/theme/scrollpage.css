@@ -58,7 +58,7 @@
 }
 
 .scroll-page i {
-	font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", FontAwesome, system-ui, sans-serif;
+	font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", FontAwesome, sans-serif;
 	font-size: inherit;
 	font-weight: 900;
 	font-style: normal;
@@ -68,19 +68,15 @@
 	opacity: var(--scroll-page-icon-opacity);
 	display: flex;
 	justify-content: center;
-	align-items: flex-end;
+	align-items: center;
 	width: var(--scroll-page-icon-width);
 	height: var(--scroll-page-icon-height);
-	margin: 0;
+	margin: 2px 0;
 	padding: var(--scroll-page-icon-padding);
 }
 
 .scroll-page i:before {
 	padding: 0 !important;
-}
-
-.scroll-page .scroll-up {
-	margin-bottom: 3px;
 }
 
 .scroll-page .scroll-up:before {
@@ -89,6 +85,7 @@
 
 .scroll-page .scroll-down:before {
 	content: var(--scroll-page-arrow-down);
+	transform: translateY(1px);
 }
 
 .notouch .scroll-page i:hover {
