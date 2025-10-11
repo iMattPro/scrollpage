@@ -5,7 +5,7 @@
 
 :root {
 	/* Scroll button appearance */
-	--scroll-page-bg-color: rgba(255, 255, 255, 0.4); /* opacity here enables the frosted/blur effect */
+	--scroll-page-bg-color: rgba(255, 255, 255, 0.4);
 	--scroll-page-arrow-color: #000000;
 	--scroll-page-border-color: #dbdbdb;
 	--scroll-page-border-radius: 3px;
@@ -26,14 +26,17 @@
 	--scroll-page-icon-height: 1.25rem;
 	--scroll-page-icon-padding: 0.375rem;
 	--scroll-page-icon-margin: 0.125rem 0;
+}
 
-	/* Mobile breakpoint values */
-	--scroll-page-mobile-font-size: 0.875rem;
-	--scroll-page-mobile-position-x: 0.9375rem;
-	--scroll-page-mobile-position-y: 0.9375rem;
-	--scroll-page-mobile-icon-width: 0.875rem;
-	--scroll-page-mobile-icon-height: 0.875rem;
-	--scroll-page-mobile-icon-padding: 0.375rem;
+@media only screen and (max-width: 500px), only screen and (max-device-width: 500px) {
+	:root {
+		--scroll-page-font-size: 0.875rem;
+		--scroll-page-position-x: 0.9375rem;
+		--scroll-page-position-y: 0.9375rem;
+		--scroll-page-icon-width: 0.875rem;
+		--scroll-page-icon-height: 0.875rem;
+		--scroll-page-icon-padding: 0.375rem;
+	}
 }
 
 .scroll-page {
@@ -113,32 +116,4 @@
 
 .rtl .scroll-page i {
 	padding-inline: var(--scroll-page-icon-padding) !important;
-}
-
-@media only screen and (max-width: 500px), only screen and (max-device-width: 500px) {
-	.scroll-page {
-		font-size: var(--scroll-page-mobile-font-size);
-		right: var(--scroll-page-mobile-position-x);
-		bottom: var(--scroll-page-mobile-position-y);
-	}
-
-	.scroll-page i {
-		width: var(--scroll-page-mobile-icon-width);
-		height: var(--scroll-page-mobile-icon-height);
-		padding: var(--scroll-page-mobile-icon-padding);
-	}
-
-	.rtl .scroll-page {
-		right: auto;
-		left: var(--scroll-page-mobile-position-x);
-		transform: scale(0.5);
-	}
-
-	.rtl .scroll-page.visible {
-		transform: scale(1);
-	}
-
-	.rtl .scroll-page i {
-		padding-inline: var(--scroll-page-mobile-icon-padding) !important;
-	}
 }
