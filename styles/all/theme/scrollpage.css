@@ -5,8 +5,9 @@
 
 :root {
 	/* Scroll button appearance */
-	--scroll-page-bg-color: rgba(0, 0, 0, 0.5); /* opacity here enables the frosted/blur effect */
-	--scroll-page-arrow-color: #ffffff;
+	--scroll-page-bg-color: rgba(255, 255, 255, 0.5); /* opacity here enables the frosted/blur effect */
+	--scroll-page-arrow-color: #000000;
+	--scroll-page-border-color: #dbdbdb;
 	--scroll-page-border-radius: 3px;
 	--scroll-page-z-index: 9999;
 	--scroll-page-backdrop-blur: 4px;
@@ -63,6 +64,7 @@
 	font-weight: 900;
 	font-style: normal;
 	background-color: var(--scroll-page-bg-color);
+	border: solid 1px var(--scroll-page-border-color);
 	border-radius: var(--scroll-page-border-radius);
 	color: var(--scroll-page-arrow-color);
 	opacity: 0.9;
