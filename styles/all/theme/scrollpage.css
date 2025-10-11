@@ -49,14 +49,14 @@
 	cursor: pointer;
 	transition: opacity 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), visibility 0.4s ease-in-out, transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 	transition-delay: 0s, 0.4s, 0s;
-	transform: translateX(100px) scale(0.5);
+	transform: scale(0.5);
 }
 
 .scroll-page.visible {
 	opacity: 0.5;
 	visibility: visible;
 	transition-delay: 0s;
-	transform: translateX(0) scale(1);
+	transform: scale(1);
 }
 
 .scroll-page i {
@@ -97,11 +97,11 @@
 .rtl .scroll-page {
 	right: auto;
 	left: var(--scroll-page-position-x);
-	transform: translateX(-100px) scale(0.5);
+	transform: scale(0.5);
 }
 
 .rtl .scroll-page.visible {
-	transform: translateX(0) scale(1);
+	transform: scale(1);
 }
 
 .rtl .scroll-page i {
@@ -124,11 +124,11 @@
 	.rtl .scroll-page {
 		right: auto;
 		left: var(--scroll-page-mobile-position-x);
-		transform: translateX(-100px) scale(0.5);
+		transform: scale(0.5);
 	}
 
 	.rtl .scroll-page.visible {
-		transform: translateX(0) scale(1);
+		transform: scale(1);
 	}
 
 	.rtl .scroll-page i {
