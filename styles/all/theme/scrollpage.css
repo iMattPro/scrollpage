@@ -5,7 +5,7 @@
 
 :root {
 	/* Scroll button appearance */
-	--scroll-page-bg-color: rgba(255, 255, 255, 0.5); /* opacity here enables the frosted/blur effect */
+	--scroll-page-bg-color: rgba(255, 255, 255, 0.4); /* opacity here enables the frosted/blur effect */
 	--scroll-page-arrow-color: #000000;
 	--scroll-page-border-color: #dbdbdb;
 	--scroll-page-border-radius: 3px;
@@ -81,6 +81,7 @@
 
 .scroll-page i:before {
 	padding: 0 !important;
+	transition: transform 0.2s ease-out;
 }
 
 .scroll-page .scroll-up:before {
@@ -92,8 +93,12 @@
 	transform: translateY(1px);
 }
 
-.notouch .scroll-page i:hover {
-	opacity: 1;
+.notouch .scroll-page .scroll-up:hover:before {
+	transform: translateY(-2px);
+}
+
+.notouch .scroll-page .scroll-down:hover:before {
+	transform: translateY(3px);
 }
 
 .rtl .scroll-page {
