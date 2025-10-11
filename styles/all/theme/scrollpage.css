@@ -24,6 +24,7 @@
 	--scroll-page-icon-width: 1.25rem;
 	--scroll-page-icon-height: 1.25rem;
 	--scroll-page-icon-padding: 0.375rem;
+	--scroll-page-icon-margin: 0.125rem 0;
 
 	/* Mobile breakpoint values */
 	--scroll-page-mobile-font-size: 0.875rem;
@@ -70,7 +71,7 @@
 	align-items: center;
 	width: var(--scroll-page-icon-width);
 	height: var(--scroll-page-icon-height);
-	margin: 2px 0;
+	margin: var(--scroll-page-icon-margin);
 	padding: var(--scroll-page-icon-padding);
 	-webkit-backdrop-filter: blur(var(--scroll-page-backdrop-blur));
 	backdrop-filter: blur(var(--scroll-page-backdrop-blur));
