@@ -1,17 +1,17 @@
 @import url("../../all/theme/scrollpage.css");
 
 :root {
-	--scroll-page-bg-color: rgb(13 110 253);
-	--scroll-page-arrow-color: #ffffff;
+	--scroll-page-bg-color: var(--bs-blue, rgb(13 110 253));
+	--scroll-page-arrow-color: var(--bs-white, #ffffff);
 	--scroll-page-border-radius: 50%;
 
-	--scroll-page-icon-width: 40px;
-	--scroll-page-icon-height: 40px;
+	--scroll-page-icon-width: 2.5rem;
+	--scroll-page-icon-height: 2.5rem;
 }
 
 @media only screen and (max-width: 500px), only screen and (max-device-width: 500px) {
 	:root {
-		--scroll-page-icon-width: 28px;
-		--scroll-page-icon-height: 28px;
+		--scroll-page-icon-width: 1.75rem;
+		--scroll-page-icon-height: 1.75rem;
 	}
 }
