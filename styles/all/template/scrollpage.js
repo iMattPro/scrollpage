@@ -1,3 +1,14 @@
+/**
+ * Scroll Page Extension for phpBB
+ *
+ * Provides animated scroll-to-top and scroll-to-bottom buttons with:
+ * - Auto-show/hide based on scroll position (25 px threshold)
+ * - Auto-hide after 3 seconds of inactivity
+ * - Automatic theme detection (light/dark)
+ *
+ * @copyright (c) 2025 Matt Friedman
+ * @license GNU General Public License, version 2 (GPL-2.0)
+ */
 (() => {
 	'use strict';
 
@@ -8,6 +19,36 @@
 		return;
 	}
 
+	// Detect theme and set appropriate colors
+	const detectTheme = () => {
+		const scrollIcon = document.querySelector('.scroll-page i');
+		if (!scrollIcon) {
+			return;
+		}
+
+		const currentBg = getComputedStyle(scrollIcon).backgroundColor;
+		if (currentBg !== 'rgba(255, 255, 255, 0.4)') {
+			return;
+		}
+
+		const bodyBg = getComputedStyle(document.body).backgroundColor;
+		const rgb = bodyBg.match(/\d+/g);
+
+		if (rgb) {
+			const [r, g, b] = rgb.map(Number);
+			const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+
+			if (brightness < 128) {
+				// Dark theme
+				document.documentElement.style.setProperty('--scroll-page-bg-color', 'rgba(0, 0, 0, 0.4)');
+				document.documentElement.style.setProperty('--scroll-page-arrow-color', '#ffffff');
+				document.documentElement.style.setProperty('--scroll-page-border-color', '#333333');
+			}
+		}
+	};
+
+	detectTheme();
+
 	// Hide phpBB's built-in scroll-to-top-button if it exists
 	const phpbbButton = document.querySelector('.to-top-button');
 	if (phpbbButton) {
@@ -15,6 +56,7 @@
 	}
 
 	let isVisible = false;
+	let hideTimeout;
 
 	// Throttle scroll events for better performance
 	let scrollTimeout;
@@ -30,6 +72,15 @@
 			if (shouldShow !== isVisible) {
 				button.classList.toggle('visible', shouldShow);
 				isVisible = shouldShow;
+			}
+
+			// Auto-hide after 4 seconds of no scrolling
+			if (shouldShow) {
+				clearTimeout(hideTimeout);
+				hideTimeout = setTimeout(() => {
+					button.classList.remove('visible');
+					isVisible = false;
+				}, 3000);
 			}
 		}, 100);
 	};
