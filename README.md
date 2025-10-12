@@ -2,6 +2,8 @@
 
 This phpBB extension adds a scroll to top and bottom button making it easier to navigate long pages.
 
+[![Tests](https://github.com/iMattPro/scrollpage/actions/workflows/tests.yml/badge.svg)](https://github.com/iMattPro/scrollpage/actions/workflows/tests.yml)
+
 ## Minimum Requirements
 * phpBB 3.2.0
 * phpBB 3.3.0
