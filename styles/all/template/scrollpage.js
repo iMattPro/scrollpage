@@ -2,7 +2,7 @@
  * Scroll Page Extension for phpBB
  *
  * Provides animated scroll-to-top and scroll-to-bottom buttons with:
- * - Auto-show/hide based on scroll position (25 px threshold)
+ * - Auto-show/hide based on scroll position
  * - Auto-hide after 3 seconds of inactivity
  * - Automatic theme detection (light/dark)
  *
