@@ -13,108 +13,77 @@
 	'use strict';
 
 	const SCROLL_THRESHOLD = 25;
-	const button = document.querySelector('.scroll-page');
+	const HIDE_DELAY = 3000;
+	const THROTTLE_DELAY = 100;
 
+	const button = document.querySelector('.scroll-page');
 	if (!button) {
 		return;
 	}
 
-	// Detect dark body backgrounds and set to an appropriate dark theme
-	const detectTheme = () => {
-		const scrollIcon = document.querySelector('.scroll-page i');
-		if (!scrollIcon) {
-			return;
-		}
+	const scrollIcon = button.querySelector('i');
+	const docElement = document.documentElement;
 
-		const currentBg = getComputedStyle(scrollIcon).backgroundColor;
-		if (currentBg !== 'rgba(255, 255, 255, 0.4)') {
-			return;
-		}
-
-		const bodyBg = getComputedStyle(document.body).backgroundColor;
-		const rgb = bodyBg.match(/\d+/g);
-
-		if (rgb) {
-			const [r, g, b] = rgb.map(Number);
-			const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-
-			if (brightness < 128) {
-				// Dark theme
-				document.documentElement.style.setProperty('--scroll-page-bg-color', 'rgba(0, 0, 0, 0.4)');
-				document.documentElement.style.setProperty('--scroll-page-arrow-color', '#ffffff');
-				document.documentElement.style.setProperty('--scroll-page-border-color', '#333333');
-			}
-		}
-	};
-
-	detectTheme();
-
-	// Hide phpBB's built-in scroll-to-top-button if it exists
+	// Hide phpBB's built-in button
 	const phpbbButton = document.querySelector('.to-top-button');
 	if (phpbbButton) {
 		phpbbButton.style.display = 'none';
 	}
 
-	let isVisible = false;
-	let isHovered = false;
-	let hideTimeout;
+	// Detect and apply dark theme
+	if (scrollIcon && getComputedStyle(scrollIcon).backgroundColor === 'rgba(255, 255, 255, 0.4)') {
+		const rgb = getComputedStyle(document.body).backgroundColor.match(/\d+/g);
+		if (rgb && (rgb[0] * 299 + rgb[1] * 587 + rgb[2] * 114) / 1000 < 128) {
+			docElement.style.setProperty('--scroll-page-bg-color', 'rgba(0, 0, 0, 0.4)');
+			docElement.style.setProperty('--scroll-page-arrow-color', '#ffffff');
+			docElement.style.setProperty('--scroll-page-border-color', '#333333');
+		}
+	}
 
-	// Throttle scroll events for better performance
-	let scrollTimeout;
+	let isVisible = false, isHovered = false, hideTimeout, scrollTimeout;
+
+	const startHideTimer = () => {
+		clearTimeout(hideTimeout);
+		hideTimeout = setTimeout(() => {
+			if (!isHovered) {
+				button.classList.remove('visible');
+				isVisible = false;
+			}
+		}, HIDE_DELAY);
+	};
+
 	const handleScroll = () => {
 		if (scrollTimeout) {
 			return;
 		}
-
 		scrollTimeout = setTimeout(() => {
 			scrollTimeout = null;
 			const shouldShow = window.scrollY > SCROLL_THRESHOLD;
-
 			if (shouldShow !== isVisible) {
 				button.classList.toggle('visible', shouldShow);
 				isVisible = shouldShow;
 			}
-
-			// Auto-hide after 3 seconds of no scrolling (unless hovered)
 			if (shouldShow) {
-				clearTimeout(hideTimeout);
-				hideTimeout = setTimeout(() => {
-					if (!isHovered) {
-						button.classList.remove('visible');
-						isVisible = false;
-					}
-				}, 3000);
+				startHideTimer();
 			}
-		}, 100);
+		}, THROTTLE_DELAY);
 	};
 
-	const scrollPage = (event) => {
+	const scrollPage = (e) => {
 		window.scrollTo({
-			top: event.currentTarget.classList.contains('scroll-up') ? 0 : document.documentElement.scrollHeight,
+			top: e.currentTarget.classList.contains('scroll-up') ? 0 : docElement.scrollHeight,
 			behavior: 'smooth'
 		});
 	};
 
+	// Event listeners
 	window.addEventListener('scroll', handleScroll, { passive: true });
-
-	document.querySelectorAll('.scroll-page > i').forEach(icon => {
-		icon.addEventListener('click', scrollPage);
-	});
-
-	// Track hover state to prevent auto-hide
-	button.addEventListener('mouseenter', () => {
-		isHovered = true;
-	});
-
+	button.querySelectorAll('i').forEach(icon => icon.addEventListener('click', scrollPage));
+	button.addEventListener('mouseenter', () => isHovered = true);
 	button.addEventListener('mouseleave', () => {
 		isHovered = false;
-		// Restart auto-hide timer when mouse leaves
 		if (isVisible) {
-			clearTimeout(hideTimeout);
-			hideTimeout = setTimeout(() => {
-				button.classList.remove('visible');
-				isVisible = false;
-			}, 3000);
+			startHideTimer();
 		}
 	});
 })();
