@@ -45,6 +45,7 @@
 	}
 
 	let isVisible = false;
+	let hideTimeout;
 
 	// Throttle scroll events for better performance
 	let scrollTimeout;
@@ -60,6 +61,15 @@
 			if (shouldShow !== isVisible) {
 				button.classList.toggle('visible', shouldShow);
 				isVisible = shouldShow;
+			}
+
+			// Auto-hide after 4 seconds of no scrolling
+			if (shouldShow) {
+				clearTimeout(hideTimeout);
+				hideTimeout = setTimeout(() => {
+					button.classList.remove('visible');
+					isVisible = false;
+				}, 3000);
 			}
 		}, 100);
 	};
