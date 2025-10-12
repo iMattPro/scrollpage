@@ -56,6 +56,7 @@
 	}
 
 	let isVisible = false;
+	let isHovered = false;
 	let hideTimeout;
 
 	// Throttle scroll events for better performance
@@ -74,12 +75,14 @@
 				isVisible = shouldShow;
 			}
 
-			// Auto-hide after 4 seconds of no scrolling
+			// Auto-hide after 3 seconds of no scrolling (unless hovered)
 			if (shouldShow) {
 				clearTimeout(hideTimeout);
 				hideTimeout = setTimeout(() => {
-					button.classList.remove('visible');
-					isVisible = false;
+					if (!isHovered) {
+						button.classList.remove('visible');
+						isVisible = false;
+					}
 				}, 3000);
 			}
 		}, 100);
@@ -96,5 +99,22 @@
 
 	document.querySelectorAll('.scroll-page > i').forEach(icon => {
 		icon.addEventListener('click', scrollPage);
+	});
+
+	// Track hover state to prevent auto-hide
+	button.addEventListener('mouseenter', () => {
+		isHovered = true;
+	});
+
+	button.addEventListener('mouseleave', () => {
+		isHovered = false;
+		// Restart auto-hide timer when mouse leaves
+		if (isVisible) {
+			clearTimeout(hideTimeout);
+			hideTimeout = setTimeout(() => {
+				button.classList.remove('visible');
+				isVisible = false;
+			}, 3000);
+		}
 	});
 })();
