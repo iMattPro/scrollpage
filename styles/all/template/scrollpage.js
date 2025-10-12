@@ -7,7 +7,7 @@
  * - Automatic theme detection (light/dark)
  *
  * @copyright (c) 2025 Matt Friedman
- * @license GNU General Public License, version 2 (GPL-2.0)
+ * @license GPL-2.0-or-later
  */
 (() => {
 	'use strict';
@@ -19,7 +19,7 @@
 		return;
 	}
 
-	// Detect theme and set appropriate colors
+	// Detect dark body backgrounds and set to an appropriate dark theme
 	const detectTheme = () => {
 		const scrollIcon = document.querySelector('.scroll-page i');
 		if (!scrollIcon) {

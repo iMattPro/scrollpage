@@ -49,7 +49,10 @@
 	bottom: var(--scroll-page-position-y);
 	visibility: hidden;
 	cursor: pointer;
-	transition: opacity 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), visibility 0.4s ease-in-out, transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	transition:
+		opacity 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+		visibility 0.4s ease-in-out,
+		transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 	transition-delay: 0s, 0.4s, 0s;
 	transform: scale(0.5);
 }
