@@ -16,11 +16,11 @@
 	--scroll-page-arrow-up: "\f106";
 	--scroll-page-arrow-down: "\f107";
 
-	/* Positioning (desktop) */
+	/* Positioning */
 	--scroll-page-position-x: 1.5625rem;
 	--scroll-page-position-y: 1.5625rem;
 
-	/* Size and spacing (desktop) */
+	/* Size and spacing */
 	--scroll-page-font-size: 1.125rem;
 	--scroll-page-icon-width: 1.25rem;
 	--scroll-page-icon-height: 1.25rem;
@@ -30,12 +30,7 @@
 
 @media only screen and (max-width: 500px), only screen and (max-device-width: 500px) {
 	:root {
-		--scroll-page-font-size: 0.875rem;
-		--scroll-page-position-x: 0.9375rem;
-		--scroll-page-position-y: 0.9375rem;
-		--scroll-page-icon-width: 0.875rem;
-		--scroll-page-icon-height: 0.875rem;
-		--scroll-page-icon-padding: 0.375rem;
+		--scroll-page-position-x: 1rem;
 	}
 }
 
