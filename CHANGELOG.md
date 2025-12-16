@@ -1,5 +1,12 @@
 ## Changelog
 
+### 1.2.0 - 2025-12-16
+
+- Revamped button visuals: pop-in and hover bounce animations, plus a modern frosted-glass look.
+- Smart theme and visibility behavior: Buttons now adapt to light/dark themes automatically and hide after 3 seconds of inactivity to keep the interface clean.
+- Enhanced customization: Added more flexible styling through CSS variables.
+- Improved performance and browser compatibility.
+
 ### 1.1.0 - 2020-04-10
 
 - Dropped support for phpBB 3.1. Requires phpBB 3.2 or newer as its minimum requirement.
